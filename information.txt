@@ -1,0 +1,117 @@
+WHAT IS AN API? Video 1
+
+API - Just connects Apps together
+An app is a bunch of code running on a server
+Usually, things work like this: User Interface > Front End > API > Back End
+API Key is a username and password combined the uniquley identifies an individual. 
+Without it, people may abuse and overload an organization's servers.
+Therefore, you need to create an account, generate a key and this allows you to conform to whatever restrictions put in place by the API usage policy
+Unlike a user interface, APIs are interfaces for the code
+
+WHAT IS AN API? VIDEO 2
+-API ia a way that facilitates communication between 2 Apps e.g weather app on your phone has to talk to another system to get the weather data or 
+if you are using google to sign into another app, that app communicates with google to verify your identity using API
+-API just states the rules for the communication to happen.
+-Good example: When wanting to get a passport, you cant just print it on your own. There is a procedure to be followed. Fill form > Take picture > 
+Submit documents to counter lady > Get passport
+-You dont know the internal process but you have gotten what you want.
+-You only have access to the counter lady which is the same as the API - Interface through wihich you can make requests and get responses
+-The lady is called the endpoint which means she is a point of contact for us to submit our inputs
+-For each endpoint, there are protocols around the type of inputs required and the output to be generated
+-All APIs have some sort of documentation detailing how to communicate with the endpoints
+-Lets have an example of a GET request:
+https://news.api.org/v3/everything? q=apples&from=2020-01-26&sortBy=popularity&apikey=didsghdsgdsu8hdsgbdsvv
+-Since this is a get request:
+1.no data processing/modification is made at the server, its just retrieval of information.
+2.data is sent as query parameters and is included in the url
+3.No sensitive information should be include in url
+4.Identical requests have the same effect as a single request
+5.Response to get requests can be cached
+-https://news.api.org/v3/everything? - this is called an endpoint/url to a resource we can access
+-q=apples&from=2020-01-26&sortBy=popularity&apikey=didsghdsgdsu8hdsgbdsvv - these are parameters
+-Data in the form of a JSON object is returned allowing us to extract the specific fields we want as JSON can be parsed
+-Sometimes we use SDK - Software Development Kit which is code that comes with an API that makes it easier for us to use the API
+
+WHAT IS AN API? VIDEO 3
+Application - any software with a specific purpose
+Interface - A contract/protocol that dictates how 2 applications communicate with one another using requests and responses
+Web APIs - Type of apis that deliver client requests and return responses via Json or XML usually over the internet
+Each request and response cycle is an API called
+Request consists of a server endpoint url and a request method
+Response consists of a status code and a response body
+
+WHAT IS REST API?
+All applications use the client-server architecture
+If your app is requesting data, then it is the client in a communication
+REST = Representational State Transfer which is a fancy way of saying that a server responds to the CRUD operations. Creater, read, update and delete in a 
+standard way
+The idea is to treat all server urls as access points for the various resources on the servers
+https://vividly.com/api/customers
+customers is a resource
+RESTful APIs use standard HTTP methods (GET, POST, PUT, DELETE) for operations and are often based on resources, identified by URIs. They rely on stateless 
+communication, meaning each request from a client contains all the information needed to understand and process the request.
+
+WHAT IS FLASK
+Flask is a micro web framework for Python, designed to be lightweight and easy to use. It provides tools, libraries, and patterns to help developers build web
+ applications quickly. Flask is often used for building web services, APIs (Application Programming Interfaces), and other web-related projects.
+When it comes to REST (Representational State Transfer) and Flask, developers commonly use Flask to create RESTful APIs. Flask makes it straightforward to
+ define routes, handle HTTP requests, and return appropriate responses. Here are some key aspects of Flask in the context of building RESTful APIs:
+1. Flask allows you to define routes and associate them with functions (views). These views can handle different HTTP methods (GET, POST, PUT, DELETE, etc.).
+2.Flask supports the use of standard HTTP methods, aligning with the principles of REST. Developers can define routes with specific HTTP methods to represent CRUD (Create, Read, Update, Delete) operations.
+3.Flask provides tools to handle incoming requests, parse request data (JSON, form data, query parameters), and generate appropriate responses.
+4.Flask facilitates the formatting of responses, including JSON responses commonly used in RESTful APIs.
+-Flask is a popular web framework used for developing web applications and APIS using python
+- Flask provides the necessary tools and functionalities to define routes, handle HTTP requests, and send appropriate responses, making it well-suited for
+ building APIs. Developers commonly use Flask to create RESTful APIs
+1.Routing System:
+Flask allows you to define routes based on URLs and associate them with specific functions (view functions) in your Python code. 
+This enables you to handle different endpoints and HTTP methods, providing a structured way to organize your API.
+2.HTTP Methods Support
+Flask supports standard HTTP methods such as GET, POST, PUT, DELETE, etc. This allows you to design APIs that follow RESTful principles and perform 
+CRUD (Create, Read, Update, Delete) operations.
+3.Request and Response Handling:
+Flask provides objects like request to access incoming request data (query parameters, form data, etc.) and facilitates the creation of HTTP responses using Flask.
+Response or the jsonify function for JSON responses.
+4.View Functions:
+View functions in Flask are Python functions that handle specific routes. They are responsible for processing incoming requests, executing the necessary logic,
+and returning an appropriate response.
+
+FLASK EXPLANATION
+app = Flask(__name__)
+Flask Import:
+Flask is a class provided by the Flask framework for creating web applications.
+__name__ Parameter:
+The __name__ parameter is a special variable in Python that represents the name of the current module. When a Python script is run, __name__ is set to "__main__" if it is the main program being executed.
+Flask(__name__):
+Flask(__name__) creates an instance of the Flask class. The __name__ parameter is used by Flask to determine the root path for the application. This is important for Flask to locate templates, static files, and other resources.
+app Variable:
+The resulting instance is typically assigned to a variable named app (though you can use any variable name you prefer). This variable becomes the central application object that you configure and use to define routes, handle requests, and more.
+
+SUMMARY
+-So basically, remember we said API connects two apps together.
+-Incorporating FLASK allows us to create a client and server relationship where we have one app acting as a client and the other acting as a server.
+-The server exposes an endpoint through which we can access the service of sending tweets based on a summarized website()
+-This service endpoint can receive GET request, andWhen a request is made to this endpoint, it triggers the process of summarizing a given website, 
+generating an image based on the summary, and sending a tweet with the summary and the generated image.
+-Flask acts as a middleware between your frontend application and the OpenAI API, Twitter API, and potentially other services.
+-Integration with External APIs
+It allows you to manage the flow of data and actions, handling requests from the frontend, interacting with the OpenAI API to get a website summary, 
+generating images, and sending tweets using the Twitter API.
+-Parameter Retrieval:
+Flask retrieves parameters from the request's query string. In this case, it retrieves the "service" parameter, which seems to be part of the URL of the website to be summarized.
+
+CLASSES, OBJECTS AND CONSTRUCTORS
+- A class just like a struct is a user defined data type and acts as a template for mantaining the data
+-Object is the same as instance and it is a specific occurence of a class that is created from a class blueprint
+-Constructor is a special method in a class that is automatically called when an object is created from that class
+-It is used to initialize the object's attributes and in python the constructor __init__ is called automatically when a new instance of the class is created
+-This means in the OpenAI class, there is likely a constructor that takes parameters to initialize the object
+Example
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# Creating instances (objects) of the Dog class
+dog1 = Dog("Buddy", 3)
+dog2 = Dog("Max", 5)
