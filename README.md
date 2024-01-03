@@ -1,4 +1,4 @@
-# AI Website Summarize and Tweet Generator
+# AI Website Summarizer and Tweet Generator
 This project utilizes OpenAI's GPT-3.5 Turbo model and DALL-E-2 to generate professional-sounding tweets for Twitter based on a provided website. The generated tweets are accompanied by images created by the DALL-E-2 model. The entire process is orchestrated through a Flask-based RESTful API.
 
 
